@@ -1,0 +1,30 @@
+import Button from './components/Button.vue';
+
+const version = '__VERSION__';
+
+const install = Vue => {
+  /*
+   * NOTE:
+   *   if you need to extend Vue contstructor, you can extend it in here.
+   */
+
+  Vue.prototype.$add = (a, b) => {
+    return a + b;
+  };
+
+  /*
+   * NOTE:
+   *  somthing implementation here ...
+   */
+};
+
+const plugin = {
+  install,
+  version,
+};
+
+export { Button, install, version };
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(plugin);
+}

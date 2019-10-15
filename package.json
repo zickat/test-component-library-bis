@@ -1,0 +1,70 @@
+{
+  "name": "test-component-library-bis",
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "demo": "vue-cli-service demo",
+    "docs": "npm run docs:serve",
+    "docs:build": "vue-cli-service docs --mode build",
+    "docs:serve": "vue-cli-service docs --mode serve",
+    "lib:watch": "npm-watch build",
+    "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
+    "start": "vue-cli-service serve",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["src"],
+      "extensions": "js,ts,vue,styl"
+    }
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue-router": "^3.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.0",
+    "@vue/cli-plugin-eslint": "^3.12.0",
+    "@vue/cli-plugin-unit-jest": "^3.12.0",
+    "@vue/cli-service": "^3.12.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.18.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue": "^2.6.10",
+    "vue-cli-plugin-build-watch": "^1.0.0",
+    "vue-cli-plugin-p11n": "^0.4.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "files": [
+    "dist/test-component-library-bis.common.js",
+    "dist/test-component-library-bis.umd.min.js",
+    "dist/test-component-library-bis.umd.js",
+    "dist/test-component-library-bis.esm.js",
+    "src"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "jsdelivr": "dist/test-component-library-bis.umd.min.js",
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "main": "dist/test-component-library-bis.common.js",
+  "module": "dist/test-component-library-bis.esm.js",
+  "sideeffects": false,
+  "unpkg": "dist/test-component-library-bis.umd.min.js"
+}
